@@ -1,0 +1,46 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "next/typescript"
+  ],
+  "rules": {
+    "no-restricted-classes": [
+      "error",
+      {
+        "patterns": [
+          {
+            "target": "bottom-8",
+            "message": "Use 'bottom-16' or higher for scroll indicators to prevent collision with CTA buttons. See DEVELOPMENT_STANDARDS.md for details."
+          },
+          {
+            "target": "bottom-4",
+            "message": "Use 'bottom-16' or higher for scroll indicators to prevent collision with CTA buttons. See DEVELOPMENT_STANDARDS.md for details."
+          },
+          {
+            "target": "mb-8",
+            "message": "Use 'mb-16' or higher for CTA button containers to prevent collision with scroll indicators. See DEVELOPMENT_STANDARDS.md for details."
+          },
+          {
+            "target": "mb-4",
+            "message": "Use 'mb-16' or higher for CTA button containers to prevent collision with scroll indicators. See DEVELOPMENT_STANDARDS.md for details."
+          }
+        ]
+      }
+    ],
+    "no-restricted-patterns": [
+      "error",
+      {
+        "patterns": [
+          {
+            "target": "min-h-screen.*flex.*items-center.*justify-center.*overflow-hidden(?!.*pt-20)",
+            "message": "Hero sections must include 'pt-20' to prevent content from running into navigation. See DEVELOPMENT_STANDARDS.md for details."
+          },
+          {
+            "target": "min-h-screen.*flex.*items-center.*justify-center.*overflow-hidden(?!.*pb-32)",
+            "message": "Hero sections must include 'pb-32' to provide sufficient bottom spacing. See DEVELOPMENT_STANDARDS.md for details."
+          }
+        ]
+      }
+    ]
+  }
+}

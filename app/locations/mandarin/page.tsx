@@ -1,0 +1,675 @@
+'use client'
+
+import { motion } from 'framer-motion'
+import Link from 'next/link'
+import { FaMapMarkerAlt, FaPhone, FaCheckCircle, FaHome, FaTree, FaUsers, FaLeaf } from 'react-icons/fa'
+
+const MandarinPage = () => {
+  return (
+    <div className="min-h-screen bg-neutral-white">
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-32">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('/hero_section.png')"
+          }}
+        >
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/95 via-primary/90 to-secondary/85"></div>
+        </div>
+
+        {/* Floating Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 2, delay: 0.5 }}
+            className="absolute top-32 left-16 w-32 h-32 bg-accent/20 rounded-full blur-3xl"
+          />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 2, delay: 0.8 }}
+            className="absolute bottom-32 right-16 w-40 h-40 bg-accent-eco/20 rounded-full blur-3xl"
+          />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 container-custom text-center text-neutral-white px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-5xl mx-auto"
+          >
+            {/* Location Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 mb-8 border border-white/30 mt-8"
+            >
+              <FaMapMarkerAlt className="text-accent text-lg" />
+              <span className="text-sm font-semibold">Mandarin, Jacksonville FL</span>
+            </motion.div>
+
+            {/* Main Headline */}
+            <motion.h1 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 text-shadow leading-tight"
+            >
+              <span className="block">Pressure Washing</span>
+              <span className="block text-accent">Mandarin</span>
+              <span className="block text-2xl md:text-3xl lg:text-4xl font-normal mt-4 text-accent-eco">
+                Family-Focused Specialists
+              </span>
+            </motion.h1>
+
+            {/* Enhanced Description */}
+            <motion.p 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-xl md:text-2xl lg:text-3xl mb-8 text-shadow max-w-4xl mx-auto leading-relaxed"
+            >
+              Family-focused pressure washing specialists serving 
+              <span className="text-accent font-semibold"> Mandarin Gardens</span>, 
+              <span className="text-accent font-semibold"> Mandarin Lakes</span>, 
+              <span className="text-accent font-semibold"> Mandarin Cove</span>, and 
+              <span className="text-accent font-semibold"> Mandarin Estates</span>.
+            </motion.p>
+
+            {/* Stats Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12"
+            >
+              <div className="bg-white/15 backdrop-blur-sm rounded-xl p-4 border border-white/25 hover:bg-white/20 transition-all duration-300">
+                <div className="text-3xl md:text-4xl font-bold text-accent mb-2">20+ Years</div>
+                <div className="text-white/90 text-sm md:text-base">Family Business</div>
+              </div>
+              <div className="bg-white/15 backdrop-blur-sm rounded-xl p-4 border border-white/25 hover:bg-white/20 transition-all duration-300">
+                <div className="text-3xl md:text-4xl font-bold text-accent-eco mb-2">1000+</div>
+                <div className="text-white/90 text-sm md:text-base">Mandarin Properties</div>
+              </div>
+              <div className="bg-white/15 backdrop-blur-sm rounded-xl p-4 border border-white/25 hover:bg-white/20 transition-all duration-300">
+                <div className="text-3xl md:text-4xl font-bold text-secondary mb-2">100%</div>
+                <div className="text-white/90 text-sm md:text-base">Satisfaction Rate</div>
+              </div>
+            </motion.div>
+
+            {/* Enhanced Key Benefits */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="flex flex-wrap justify-center gap-6 mb-10 text-sm md:text-base"
+            >
+              <div className="flex items-center space-x-3 bg-white/15 backdrop-blur-sm px-4 py-2 rounded-full border border-white/25">
+                <FaCheckCircle className="text-accent-eco text-lg" />
+                <span className="font-semibold">Family-Owned Business</span>
+              </div>
+              <div className="flex items-center space-x-3 bg-white/15 backdrop-blur-sm px-4 py-2 rounded-full border border-white/25">
+                <FaCheckCircle className="text-accent-eco text-lg" />
+                <span className="font-semibold">Suburban Property Experts</span>
+              </div>
+              <div className="flex items-center space-x-3 bg-white/15 backdrop-blur-sm px-4 py-2 rounded-full border border-white/25">
+                <FaCheckCircle className="text-accent-eco text-lg" />
+                <span className="font-semibold">Tree & Nature Specialists</span>
+              </div>
+              <div className="flex items-center space-x-3 bg-white/15 backdrop-blur-sm px-4 py-2 rounded-full border border-white/25">
+                <FaCheckCircle className="text-accent-eco text-lg" />
+                <span className="font-semibold">Free Estimates</span>
+              </div>
+            </motion.div>
+
+            {/* Enhanced CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+              className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16"
+            >
+              <Link href="/contact" className="btn-primary text-xl px-10 py-5 transform hover:scale-105 transition-all duration-300 shadow-2xl">
+                Get Free Family Home Quote
+              </Link>
+              <Link href="tel:+19044563851" className="flex items-center space-x-3 bg-white/20 hover:bg-white/30 text-neutral-white px-8 py-5 rounded-xl font-semibold transition-all duration-300 backdrop-blur-sm border border-white/30 hover:border-white/50 transform hover:scale-105">
+                <FaPhone className="text-xl" />
+                <span className="text-xl">(904) 456-3851</span>
+              </Link>
+            </motion.div>
+
+            {/* Trust Indicators */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1, duration: 0.8 }}
+              className="mt-12 text-center"
+            >
+              <p className="text-white/80 text-sm mb-4">Trusted by Mandarin Families for Over 20 Years</p>
+              <div className="flex justify-center space-x-6 text-white/60">
+                <span className="text-sm">✓ Licensed & Insured</span>
+                <span className="text-sm">✓ Eco-Friendly</span>
+                <span className="text-sm">✓ Family-Focused Service</span>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+
+        {/* Enhanced Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2, duration: 0.8 }}
+          className="absolute bottom-16 left-1/2 transform -translate-x-1/2"
+        >
+          <div className="w-8 h-12 border-2 border-white/50 rounded-full flex justify-center backdrop-blur-sm">
+            <motion.div
+              animate={{ y: [0, 16, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="w-2 h-4 bg-white rounded-full mt-2"
+            />
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Local SEO Content Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-neutral-text mb-6">
+              Mandarin Pressure Washing Excellence
+            </h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              As the trusted pressure washing company serving Mandarin, we understand the unique demands of suburban family properties. 
+              Our family-focused approach combines professional service with the care and attention that Mandarin residents expect.
+            </p>
+          </motion.div>
+
+          {/* Local Area Information */}
+          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-3xl font-bold text-neutral-text mb-6">
+                Why Mandarin Needs Professional Pressure Washing
+              </h3>
+              <div className="space-y-4 text-lg text-gray-700">
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-accent rounded-full mt-3 flex-shrink-0"></div>
+                  <p><strong>Mature Landscaping:</strong> Mandarin's established communities have mature trees that drop debris, pollen, and sap on homes and driveways.</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-accent rounded-full mt-3 flex-shrink-0"></div>
+                  <p><strong>High Humidity:</strong> Florida's humidity creates ideal conditions for mold, mildew, and algae growth on roofs and siding.</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-accent rounded-full mt-3 flex-shrink-0"></div>
+                  <p><strong>Family Standards:</strong> Mandarin's family-oriented communities require safe, eco-friendly cleaning that protects children and pets.</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-accent rounded-full mt-3 flex-shrink-0"></div>
+                  <p><strong>Property Value:</strong> Regular maintenance helps preserve the value of Mandarin's well-maintained suburban properties.</p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-primary to-secondary text-white p-8 rounded-2xl shadow-xl"
+            >
+              <h4 className="text-2xl font-bold mb-6">Mandarin Quick Facts</h4>
+              <div className="space-y-4 text-lg">
+                <div className="flex justify-between">
+                  <span>Population:</span>
+                  <span className="font-semibold">~15,000</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Median Home Value:</span>
+                  <span className="font-semibold">$450K+</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Established:</span>
+                  <span className="font-semibold">1960s</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Schools:</span>
+                  <span className="font-semibold">A+ Rated</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Family Homes:</span>
+                  <span className="font-semibold">90%+</span>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Local Service Areas */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h3 className="text-3xl font-bold text-neutral-text mb-8">
+              Mandarin Service Areas We Cover
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {[
+                'Mandarin Gardens',
+                'Mandarin Lakes',
+                'Mandarin Cove',
+                'Mandarin Estates',
+                'Mandarin Hills',
+                'Mandarin Meadows',
+                'Mandarin Oaks',
+                'Mandarin Park'
+              ].map((area, index) => (
+                <div key={area} className="bg-white p-4 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+                  <FaMapMarkerAlt className="text-accent mx-auto mb-2 text-xl" />
+                  <h4 className="font-semibold text-neutral-text text-sm">{area}</h4>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Area Overview */}
+      <section className="py-16 bg-gray-50">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-neutral-text mb-4">
+              Why Choose Us for Mandarin
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Mandarin is known for its family-friendly atmosphere, excellent schools, and beautiful suburban homes. 
+              We understand the unique needs of this close-knit community.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="bg-white p-6 rounded-lg shadow-lg"
+            >
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto">
+                <FaHome className="text-2xl text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold text-neutral-text mb-3">Suburban Home Specialists</h3>
+              <p className="text-gray-600">
+                We specialize in maintaining the beauty of suburban homes with attention to family-friendly service.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-white p-6 rounded-lg shadow-lg"
+            >
+              <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-4 mx-auto">
+                <FaTree className="text-2xl text-accent" />
+              </div>
+              <h3 className="text-xl font-semibold text-neutral-text mb-3">Tree & Nature Experts</h3>
+              <p className="text-gray-600">
+                Mandarin's lush environment requires specialized cleaning approaches for tree debris and natural elements.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="bg-white p-6 rounded-lg shadow-lg"
+            >
+              <div className="w-16 h-16 bg-accent-eco/10 rounded-full flex items-center justify-center mb-4 mx-auto">
+                <FaUsers className="text-2xl text-accent-eco" />
+              </div>
+              <h3 className="text-xl font-semibold text-neutral-text mb-3">Community-Focused</h3>
+              <p className="text-gray-600">
+                As a local business, we understand Mandarin's values and provide service that reflects community standards.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-16">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-neutral-text mb-4">
+              Services in Mandarin
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Comprehensive cleaning services perfect for Mandarin's suburban homes and family lifestyle
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-primary to-secondary text-white p-8 rounded-lg"
+            >
+              <h3 className="text-2xl font-bold mb-4">Residential Cleaning</h3>
+              <ul className="space-y-2 text-lg">
+                <li>• House exterior washing</li>
+                <li>• Roof and gutter cleaning</li>
+                <li>• Driveway and sidewalk restoration</li>
+                <li>• Deck and patio maintenance</li>
+              </ul>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-accent to-accent-eco text-white p-8 rounded-lg"
+            >
+              <h3 className="text-2xl font-bold mb-4">Suburban Property Care</h3>
+              <ul className="space-y-2 text-lg">
+                <li>• Tree debris removal</li>
+                <li>• Fence and gate cleaning</li>
+                <li>• Mailbox and post cleaning</li>
+                <li>• Playground equipment cleaning</li>
+              </ul>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Neighborhoods Served */}
+      <section className="py-16 bg-gray-50">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-neutral-text mb-4">
+              Mandarin Neighborhoods We Serve
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              From the historic areas to the newest developments, we cover all of Mandarin
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              'Mandarin Gardens',
+              'Mandarin Lakes',
+              'Mandarin Cove',
+              'Mandarin Estates',
+              'Mandarin Hills',
+              'Mandarin Meadows',
+              'Mandarin Oaks',
+              'Mandarin Park'
+            ].map((neighborhood, index) => (
+              <motion.div
+                key={neighborhood}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white p-4 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow"
+              >
+                <FaMapMarkerAlt className="text-accent mx-auto mb-2" />
+                <h3 className="font-semibold text-neutral-text">{neighborhood}</h3>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Local Testimonials */}
+      <section className="py-20 bg-white">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-neutral-text mb-6">
+              What Mandarin Families Say
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Don't just take our word for it - hear from our satisfied Mandarin clients
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                name: "Sarah & Mike Johnson",
+                location: "Mandarin Gardens",
+                rating: 5,
+                text: "As a family with young kids, we needed a pressure washing company that understood our concerns about safety. Jax FL Pressure Washing exceeded our expectations with their eco-friendly approach and attention to detail. Our home looks brand new!",
+                service: "House Washing & Driveway Cleaning"
+              },
+              {
+                name: "David Chen",
+                location: "Mandarin Lakes",
+                rating: 5,
+                text: "Living in Mandarin Lakes means dealing with a lot of tree debris and pollen. These guys handle it all professionally. They even cleaned our roof without damaging our beautiful landscaping. Highly recommend!",
+                service: "Roof Cleaning & House Washing"
+              },
+              {
+                name: "Lisa & Tom Williams",
+                location: "Mandarin Cove",
+                rating: 5,
+                text: "We've been using Jax FL Pressure Washing for three years now. Their family-focused service and consistent quality keep us coming back. They understand the unique needs of Mandarin's suburban homes.",
+                service: "Annual Maintenance Package"
+              }
+            ].map((testimonial, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
+              >
+                <div className="flex items-center mb-4">
+                  <div className="flex text-accent">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <FaStar key={i} className="text-xl" />
+                    ))}
+                  </div>
+                </div>
+                <p className="text-gray-700 mb-6 leading-relaxed">"{testimonial.text}"</p>
+                <div className="border-t pt-4">
+                  <h4 className="font-semibold text-neutral-text">{testimonial.name}</h4>
+                  <p className="text-accent text-sm">{testimonial.location}</p>
+                  <p className="text-gray-500 text-sm">{testimonial.service}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-neutral-text mb-6">
+              Mandarin Pressure Washing FAQ
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Common questions about pressure washing services in Mandarin, Jacksonville
+            </p>
+          </motion.div>
+
+          <div className="max-w-4xl mx-auto space-y-6">
+            {[
+              {
+                question: "How often should I pressure wash my Mandarin home?",
+                answer: "For Mandarin's climate and tree coverage, we recommend annual pressure washing. Homes with heavy tree coverage may need service every 8-10 months to prevent buildup from pollen, sap, and debris."
+              },
+              {
+                question: "Do you use eco-friendly cleaning solutions in Mandarin?",
+                answer: "Absolutely! We use only eco-friendly, biodegradable cleaning solutions that are safe for your family, pets, and the beautiful landscaping that makes Mandarin special. Our soft wash system is gentle on plants and trees."
+              },
+              {
+                question: "What makes Mandarin homes different for pressure washing?",
+                answer: "Mandarin homes often have mature landscaping, established trees, and family-friendly features that require special care. We're experts at cleaning around playground equipment, delicate plants, and maintaining the suburban aesthetic."
+              },
+              {
+                question: "How long does a typical Mandarin home pressure washing take?",
+                answer: "Most Mandarin homes take 2-4 hours depending on size and services needed. We work efficiently while being careful with your landscaping and family schedule. We'll give you a precise timeline during our free estimate."
+              },
+              {
+                question: "Do you offer maintenance packages for Mandarin residents?",
+                answer: "Yes! We offer annual maintenance packages specifically designed for Mandarin's climate and property types. This includes regular cleaning schedules, priority booking, and discounted rates for loyal customers."
+              },
+              {
+                question: "What areas of my Mandarin property do you clean?",
+                answer: "We clean your entire exterior: house siding, roof, driveway, walkways, fences, mailboxes, and even playground equipment. We're thorough because we know Mandarin families take pride in their well-maintained properties."
+              }
+            ].map((faq, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow"
+              >
+                <h3 className="text-xl font-semibold text-neutral-text mb-3">
+                  {faq.question}
+                </h3>
+                <p className="text-gray-700 leading-relaxed">
+                  {faq.answer}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 bg-primary text-white">
+        <div className="container-custom text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Ready to Refresh Your Mandarin Home?
+            </h2>
+            <p className="text-xl mb-8 max-w-2xl mx-auto">
+              Join our satisfied Mandarin clients who trust us to maintain their beautiful suburban properties.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/contact" className="btn-secondary text-lg px-8 py-4">
+                Get Free Estimate
+              </Link>
+              <Link href="tel:+19044563851" className="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                Call (904) 456-3851
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Structured Data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Jax FL Pressure Washing - Mandarin Jacksonville",
+            "description": "Family-focused pressure washing services in Mandarin, Jacksonville FL. Suburban home specialists for family properties and established communities.",
+            "url": "https://jaxflpressurewashing.com/locations/mandarin",
+            "telephone": "+19044563851",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Mandarin",
+              "addressRegion": "FL",
+              "addressCountry": "US"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "30.1669",
+              "longitude": "-81.6498"
+            },
+            "areaServed": [
+              "Mandarin",
+              "Mandarin Gardens",
+              "Mandarin Lakes",
+              "Mandarin Cove",
+              "Mandarin Estates",
+              "Mandarin Hills"
+            ],
+            "serviceType": [
+              "Residential Cleaning",
+              "Suburban Property Care",
+              "Roof Cleaning",
+              "Fence Cleaning",
+              "Driveway Restoration",
+              "Gutter Maintenance"
+            ],
+            "priceRange": "$$",
+            "openingHours": "Mo-Su 07:00-19:00"
+          })
+        }}
+      />
+    </div>
+  )
+}
+
+export default MandarinPage
