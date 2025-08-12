@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { FaMapMarkerAlt, FaPhone, FaCheckCircle, FaLandmark, FaBuilding, FaLeaf, FaHistory } from 'react-icons/fa'
+import { FaMapMarkerAlt, FaPhone, FaCheckCircle, FaLandmark, FaBuilding, FaLeaf, FaHistory, FaStar } from 'react-icons/fa'
 
 const SanMarcoPage = () => {
   return (

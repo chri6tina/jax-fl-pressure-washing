@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { FaMapMarkerAlt, FaPhone, FaCheckCircle, FaHome, FaTree, FaUsers, FaLeaf } from 'react-icons/fa'
+import { FaMapMarkerAlt, FaPhone, FaCheckCircle, FaHome, FaTree, FaUsers, FaLeaf, FaStar } from 'react-icons/fa'
 
 const MandarinPage = () => {
   return (

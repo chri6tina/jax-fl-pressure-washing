@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { FaMapMarkerAlt, FaPhone, FaCheckCircle, FaUmbrellaBeach, FaWater, FaLeaf, FaSun } from 'react-icons/fa'
+import { FaMapMarkerAlt, FaPhone, FaCheckCircle, FaUmbrellaBeach, FaWater, FaLeaf, FaSun, FaStar } from 'react-icons/fa'
 
 const AtlanticBeachPage = () => {
   return (
