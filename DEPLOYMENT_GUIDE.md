@@ -60,7 +60,7 @@ git push -u origin main
 ### **Step 5: Connect Your Domain**
 1. In Vercel dashboard, go to your project
 2. Click "Settings" → "Domains"
-3. Add your Squarespace domain
+3. Add your domain: `jaxflpressurewashing.com`
 4. Follow Vercel's DNS configuration instructions
 
 ## 🔗 **Squarespace Domain Configuration**
