@@ -110,7 +110,7 @@
   </url>
 
   <url>
-    <loc>https://jaxflpressurewashing.com/services/commercial-signage-cleaning</loc>
+    <loc>https://jaxflpressurewashing.com/services/commercial-washing</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -145,21 +145,7 @@
   </url>
 
   <url>
-    <loc>https://jaxflpressurewashing.com/services/warehouse-factory-cleaning</loc>
-    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://jaxflpressurewashing.com/services/parking-garage-cleaning</loc>
-    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://jaxflpressurewashing.com/services/vehicle-equipment-cleaning</loc>
+    <loc>https://jaxflpressurewashing.com/services/medical-facility-cleaning</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -167,13 +153,6 @@
 
   <url>
     <loc>https://jaxflpressurewashing.com/services/educational-facility-cleaning</loc>
-    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://jaxflpressurewashing.com/services/medical-facility-cleaning</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -200,110 +179,426 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Location Pages -->
   <url>
-    <loc>https://jaxflpressurewashing.com/locations</loc>
-    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://jaxflpressurewashing.com/locations/arlington</loc>
+    <loc>https://jaxflpressurewashing.com/services/parking-garage-cleaning</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://jaxflpressurewashing.com/locations/atlantic-beach</loc>
+    <loc>https://jaxflpressurewashing.com/services/warehouse-factory-cleaning</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://jaxflpressurewashing.com/locations/avondale</loc>
+    <loc>https://jaxflpressurewashing.com/services/vehicle-equipment-cleaning</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://jaxflpressurewashing.com/locations/eastside</loc>
+    <loc>https://jaxflpressurewashing.com/services/commercial-signage-cleaning</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
+  <!-- Service + Location Pages - Section 1: House Washing & Driveway Cleaning -->
   <url>
-    <loc>https://jaxflpressurewashing.com/locations/jacksonville-beach</loc>
+    <loc>https://jaxflpressurewashing.com/services/house-washing/arlington</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://jaxflpressurewashing.com/locations/mandarin</loc>
+    <loc>https://jaxflpressurewashing.com/services/house-washing/atlantic-beach</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://jaxflpressurewashing.com/locations/neptune-beach</loc>
+    <loc>https://jaxflpressurewashing.com/services/house-washing/avondale</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://jaxflpressurewashing.com/locations/northside</loc>
+    <loc>https://jaxflpressurewashing.com/services/house-washing/eastside</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://jaxflpressurewashing.com/locations/ortega</loc>
+    <loc>https://jaxflpressurewashing.com/services/house-washing/jacksonville-beach</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://jaxflpressurewashing.com/locations/ponte-vedra</loc>
+    <loc>https://jaxflpressurewashing.com/services/house-washing/mandarin</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://jaxflpressurewashing.com/locations/riverside</loc>
+    <loc>https://jaxflpressurewashing.com/services/house-washing/neptune-beach</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://jaxflpressurewashing.com/locations/san-marco</loc>
+    <loc>https://jaxflpressurewashing.com/services/house-washing/northside</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://jaxflpressurewashing.com/locations/southside</loc>
+    <loc>https://jaxflpressurewashing.com/services/house-washing/ortega</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://jaxflpressurewashing.com/locations/westside</loc>
+    <loc>https://jaxflpressurewashing.com/services/house-washing/ponte-vedra</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/house-washing/riverside</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/house-washing/san-marco</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/house-washing/southside</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/house-washing/westside</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/driveway-cleaning/arlington</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/driveway-cleaning/atlantic-beach</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/driveway-cleaning/avondale</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/driveway-cleaning/eastside</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/driveway-cleaning/jacksonville-beach</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/driveway-cleaning/mandarin</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/driveway-cleaning/neptune-beach</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/driveway-cleaning/northside</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/driveway-cleaning/ortega</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/driveway-cleaning/ponte-vedra</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/driveway-cleaning/riverside</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/driveway-cleaning/san-marco</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/driveway-cleaning/southside</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/driveway-cleaning/westside</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Service + Location Pages - Section 2: Roof Cleaning & Gutter Cleaning -->
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/roof-cleaning/arlington</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/roof-cleaning/atlantic-beach</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/roof-cleaning/avondale</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/roof-cleaning/eastside</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/roof-cleaning/jacksonville-beach</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/roof-cleaning/mandarin</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/roof-cleaning/neptune-beach</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/roof-cleaning/northside</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/roof-cleaning/ortega</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/roof-cleaning/ponte-vedra</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/roof-cleaning/riverside</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/roof-cleaning/san-marco</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/roof-cleaning/southside</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/roof-cleaning/westside</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/gutter-cleaning/arlington</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/gutter-cleaning/atlantic-beach</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/gutter-cleaning/avondale</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/gutter-cleaning/eastside</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/gutter-cleaning/jacksonville-beach</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/gutter-cleaning/mandarin</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/gutter-cleaning/neptune-beach</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/gutter-cleaning/northside</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/gutter-cleaning/ortega</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/gutter-cleaning/ponte-vedra</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/gutter-cleaning/riverside</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/gutter-cleaning/san-marco</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/gutter-cleaning/southside</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/services/gutter-cleaning/westside</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <!-- Other Important Pages -->
@@ -311,14 +606,7 @@
     <loc>https://jaxflpressurewashing.com/about</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://jaxflpressurewashing.com/contact</loc>
-    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
 
   <url>
@@ -330,6 +618,119 @@
 
   <url>
     <loc>https://jaxflpressurewashing.com/testimonials</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/contact</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/locations</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Location Pages -->
+  <url>
+    <loc>https://jaxflpressurewashing.com/locations/arlington</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/locations/atlantic-beach</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/locations/avondale</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/locations/eastside</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/locations/jacksonville-beach</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/locations/mandarin</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/locations/neptune-beach</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/locations/northside</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/locations/ortega</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/locations/ponte-vedra</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/locations/riverside</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/locations/san-marco</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/locations/southside</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://jaxflpressurewashing.com/locations/westside</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

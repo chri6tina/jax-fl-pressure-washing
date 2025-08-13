@@ -35,7 +35,7 @@ const Footer = () => {
             <div className="flex items-center space-x-3 mb-4">
               <div className="relative w-20 h-20">
                 <Image
-                  src="/JFPW_logo.png"
+                  src="/new_logo.png"
                   alt="Jax FL Pressure Washing Logo"
                   fill
                   className="object-contain"

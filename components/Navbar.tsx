@@ -35,7 +35,7 @@ const Navbar = () => {
           <Link href="/" className="flex items-center">
             <div className="relative w-24 h-24">
               <Image
-                src="/JFPW_logo.png"
+                src="/new_logo.png"
                 alt="Jax FL Pressure Washing Logo"
                 fill
                 className="object-contain"
