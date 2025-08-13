@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { 
   FaHome, 
   FaRoad, 
@@ -224,9 +225,11 @@ const ServicesDetail = () => {
               {/* Image */}
               <div className={index % 2 === 1 ? 'lg:col-start-1' : ''}>
                 <div className="relative rounded-2xl overflow-hidden shadow-lg">
-                  <img
+                  <Image
                     src={service.image}
                     alt={`${service.title} service`}
+                    width={600}
+                    height={320}
                     className="w-full h-80 object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>

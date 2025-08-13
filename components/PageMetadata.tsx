@@ -18,6 +18,7 @@ export function generateMetadata({
   structuredData
 }: PageMetadataProps): Metadata {
   return {
+    metadataBase: new URL('https://jaxflpressurewashing.com'),
     title,
     description,
     keywords: keywords.join(', '),

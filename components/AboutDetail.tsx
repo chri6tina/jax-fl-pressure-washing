@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { 
   FaUsers, 
   FaShieldAlt, 
@@ -84,10 +85,13 @@ const AboutDetail = () => {
 
           <div className="relative">
             <div className="rounded-2xl overflow-hidden shadow-2xl">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
                 alt="Jax FL Pressure Washing team at work"
+                width={800}
+                height={400}
                 className="w-full h-96 object-cover"
+                priority
               />
             </div>
             

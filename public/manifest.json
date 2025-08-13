@@ -1,0 +1,21 @@
+{
+  "name": "Jax FL Pressure Washing",
+  "short_name": "Jax FL PW",
+  "description": "Professional pressure washing services in Jacksonville, Florida",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#00C5F5",
+  "theme_color": "#00C5F5",
+  "icons": [
+    {
+      "src": "/new_logo_v2.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/new_logo_v2.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

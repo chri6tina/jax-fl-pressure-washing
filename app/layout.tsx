@@ -4,6 +4,7 @@ import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Script from 'next/script'
+import PerformanceOptimizer from '@/components/PerformanceOptimizer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -138,8 +139,16 @@ export default function RootLayout({
             }),
           }}
         />
-      </head>
+      
+    <meta name="theme-color" content="#00C5F5" />
+    <meta name="msapplication-TileColor" content="#00C5F5" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Jax FL Pressure Washing" />
+    <link rel="manifest" href="/manifest.json" />
+  </head>
       <body className={inter.className}>
+        <PerformanceOptimizer />
         <div className="min-h-screen flex flex-col">
           <Navbar />
           <main className="flex-grow">

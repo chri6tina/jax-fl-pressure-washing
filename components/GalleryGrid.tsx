@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Image from 'next/image'
 import { FaTimes, FaChevronLeft, FaChevronRight, FaExpand } from 'react-icons/fa'
 
 const galleryItems = [
@@ -135,9 +136,11 @@ const GalleryGrid = () => {
               <div className="relative">
                 {/* Before/After Toggle */}
                 <div className="relative h-64 overflow-hidden">
-                  <img
+                  <Image
                     src={item.before}
                     alt={`Before: ${item.title}`}
+                    width={400}
+                    height={256}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
@@ -214,15 +217,20 @@ const GalleryGrid = () => {
 
               {/* Image */}
               <div className="relative">
-                <motion.img
+                <motion.div
                   key={currentImageIndex}
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.3 }}
-                  src={currentImageIndex === 0 ? selectedItem.before : selectedItem.after}
-                  alt={currentImageIndex === 0 ? `Before: ${selectedItem.title}` : `After: ${selectedItem.title}`}
-                  className="w-full h-auto max-h-[80vh] object-contain"
-                />
+                >
+                  <Image
+                    src={currentImageIndex === 0 ? selectedItem.before : selectedItem.after}
+                    alt={currentImageIndex === 0 ? `Before: ${selectedItem.title}` : `After: ${selectedItem.title}`}
+                    width={800}
+                    height={600}
+                    className="w-full h-auto max-h-[80vh] object-contain"
+                  />
+                </motion.div>
 
                 {/* Image Label */}
                 <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 bg-black/70 text-neutral-white px-4 py-2 rounded-lg">
@@ -243,9 +251,11 @@ const GalleryGrid = () => {
                     currentImageIndex === 0 ? 'border-accent-attention' : 'border-gray-400'
                   }`}
                 >
-                  <img
+                  <Image
                     src={selectedItem.before}
                     alt="Before thumbnail"
+                    width={80}
+                    height={80}
                     className="w-full h-full object-cover"
                   />
                 </button>
@@ -255,9 +265,11 @@ const GalleryGrid = () => {
                     currentImageIndex === 1 ? 'border-accent-attention' : 'border-gray-400'
                   }`}
                 >
-                  <img
+                  <Image
                     src={selectedItem.after}
                     alt="After thumbnail"
+                    width={80}
+                    height={80}
                     className="w-full h-full object-cover"
                   />
                 </button>
