@@ -30,10 +30,10 @@ const Navbar = () => {
   return (
     <nav className="bg-neutral-white shadow-lg sticky top-0 z-50">
       <div className="container-custom">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center py-2">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <div className="relative w-20 h-20">
+            <div className="relative w-28 h-28">
               <Image
                 src="/new_logo_v2.png"
                 alt="Jax FL Pressure Washing Logo"
