@@ -10,9 +10,6 @@ import ContentReadabilityEnhancer from '@/components/ContentReadabilityEnhancer'
 import VisualHierarchy from '@/components/VisualHierarchy'
 import InteractiveElements from '@/components/InteractiveElements'
 
-// Monitoring Dashboard
-import LocalSEODashboard from '@/components/LocalSEODashboard'
-
 export default function Home() {
   return (
     <div className="min-h-screen">
@@ -25,13 +22,6 @@ export default function Home() {
       <TestimonialsSection />
       <EnhancedCTA />
       <CTASection />
-      
-      {/* Monitoring Dashboard - You can see this now! */}
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <LocalSEODashboard />
-        </div>
-      </section>
     </div>
   )
 }
