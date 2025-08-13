@@ -1,6 +1,5 @@
 'use client'
 
-import React from 'react';
 import { motion } from 'framer-motion';
 import { FaHome, FaShieldAlt, FaClock, FaStar, FaPhone, FaEnvelope, FaMapMarkerAlt, FaWater, FaLeaf } from 'react-icons/fa';
 import Image from 'next/image';
@@ -328,7 +327,60 @@ const GutterCleaningAtlanticbeachPage = () => {
           </div>
         </div>
       </footer>
-    </div>
+    
+        {/* Structured Data for SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Jax FL Pressure Washing",
+              "description": "Professional gutter cleaning services in Atlantic-beach, Florida",
+              "url": "https://jaxflpressurewashing.com",
+              "telephone": "+1-904-555-0123",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Atlantic-beach",
+                "addressRegion": "FL",
+                "addressCountry": "US"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "30.3322",
+                "longitude": "-81.6557"
+              },
+              "serviceArea": {
+                "@type": "GeoCircle",
+                "geoMidpoint": {
+                  "@type": "GeoCoordinates",
+                  "latitude": "30.3322",
+                  "longitude": "-81.6557"
+                },
+                "geoRadius": "50000"
+              },
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Gutter Cleaning Services",
+                "itemListElement": [
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Gutter Cleaning in Atlantic-beach",
+                      "description": "Professional gutter cleaning services for Atlantic-beach homes and businesses"
+                    }
+                  }
+                ]
+              },
+              "sameAs": [
+                "https://www.facebook.com/jaxflpressurewashing",
+                "https://www.google.com/maps?cid=1234567890"
+              ]
+            })
+          }}
+        />
+      </div>
   );
 };
 

@@ -1,5 +1,6 @@
 'use client'
 
+
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { FaMapMarkerAlt, FaPhone, FaCheckCircle, FaHome, FaLeaf, FaStar, FaClock, FaShieldAlt } from 'react-icons/fa'
@@ -606,7 +607,60 @@ const HouseWashingArlingtonPage = () => {
       </section>
 
 
-    </div>
+    
+        {/* Structured Data for SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Jax FL Pressure Washing",
+              "description": "Professional house washing services in Arlington, Florida",
+              "url": "https://jaxflpressurewashing.com",
+              "telephone": "+1-904-555-0123",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Arlington",
+                "addressRegion": "FL",
+                "addressCountry": "US"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "30.3322",
+                "longitude": "-81.6557"
+              },
+              "serviceArea": {
+                "@type": "GeoCircle",
+                "geoMidpoint": {
+                  "@type": "GeoCoordinates",
+                  "latitude": "30.3322",
+                  "longitude": "-81.6557"
+                },
+                "geoRadius": "50000"
+              },
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "House Washing Services",
+                "itemListElement": [
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "House Washing in Arlington",
+                      "description": "Professional house washing services for Arlington homes and businesses"
+                    }
+                  }
+                ]
+              },
+              "sameAs": [
+                "https://www.facebook.com/jaxflpressurewashing",
+                "https://www.google.com/maps?cid=1234567890"
+              ]
+            })
+          }}
+        />
+      </div>
   )
 }
 

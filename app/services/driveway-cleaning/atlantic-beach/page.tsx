@@ -1,5 +1,6 @@
 'use client'
 
+
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { FaMapMarkerAlt, FaPhone, FaCheckCircle, FaHome, FaLeaf, FaStar, FaClock, FaShieldAlt } from 'react-icons/fa'
@@ -401,7 +402,60 @@ const DrivewayCleaningAtlanticBeachPage = () => {
           </div>
         </div>
       </section>
-    </div>
+    
+        {/* Structured Data for SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Jax FL Pressure Washing",
+              "description": "Professional driveway cleaning services in Atlantic-beach, Florida",
+              "url": "https://jaxflpressurewashing.com",
+              "telephone": "+1-904-555-0123",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Atlantic-beach",
+                "addressRegion": "FL",
+                "addressCountry": "US"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "30.3322",
+                "longitude": "-81.6557"
+              },
+              "serviceArea": {
+                "@type": "GeoCircle",
+                "geoMidpoint": {
+                  "@type": "GeoCoordinates",
+                  "latitude": "30.3322",
+                  "longitude": "-81.6557"
+                },
+                "geoRadius": "50000"
+              },
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Driveway Cleaning Services",
+                "itemListElement": [
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Driveway Cleaning in Atlantic-beach",
+                      "description": "Professional driveway cleaning services for Atlantic-beach homes and businesses"
+                    }
+                  }
+                ]
+              },
+              "sameAs": [
+                "https://www.facebook.com/jaxflpressurewashing",
+                "https://www.google.com/maps?cid=1234567890"
+              ]
+            })
+          }}
+        />
+      </div>
   )
 }
 
