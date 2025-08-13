@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import './accessibility.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Script from 'next/script'
 import PerformanceOptimizer from '@/components/PerformanceOptimizer'
 import TouchOptimizer from '@/components/TouchOptimizer'
+import AccessibilityNavigation from '@/components/AccessibilityNavigation'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -141,19 +143,29 @@ export default function RootLayout({
           }}
         />
       
-    <meta name="theme-color" content="#00C5F5" />
-    <meta name="msapplication-TileColor" content="#00C5F5" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="apple-mobile-web-app-title" content="Jax FL Pressure Washing" />
-    <link rel="manifest" href="/manifest.json" />
-  </head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+        <meta name="theme-color" content="#00C5F5" />
+        <meta name="msapplication-TileColor" content="#00C5F5" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="Jax FL Pressure Washing" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="format-detection" content="telephone=no" />
+        
+        {/* Accessibility Meta Tags */}
+        <meta name="accessibility" content="WCAG 2.1 AA compliant" />
+        <meta name="accessibility-feature" content="high-contrast, large-text, reduced-motion" />
+        <meta name="accessibility-control" content="full-keyboard-navigation" />
+        <meta name="accessibility-hazard" content="none" />
+      </head>
       <body className={inter.className}>
         <PerformanceOptimizer />
+        <AccessibilityNavigation />
         <TouchOptimizer />
         <div className="min-h-screen flex flex-col">
           <Navbar />
-          <main className="flex-grow">
+          <main className="flex-grow" id="main-content">
             {children}
           </main>
           <Footer />
