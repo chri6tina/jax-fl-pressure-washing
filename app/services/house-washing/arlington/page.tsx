@@ -604,53 +604,7 @@ const HouseWashingArlingtonPage = () => {
         </div>
       </section>
 
-      {/* Footer Navigation */}
-      <section className="py-8 bg-gray-800 text-white">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-lg font-bold mb-4">Services</h3>
-              <ul className="space-y-2">
-                <li><Link href="/services/house-washing" className="hover:text-blue-400 transition duration-300">House Washing</Link></li>
-                <li><Link href="/services/driveway-cleaning" className="hover:text-blue-400 transition duration-300">Driveway Cleaning</Link></li>
-                <li><Link href="/services/roof-cleaning" className="hover:text-blue-400 transition duration-300">Roof Cleaning</Link></li>
-                <li><Link href="/services" className="hover:text-blue-400 transition duration-300">View All Services</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold mb-4">Locations</h3>
-              <ul className="space-y-2">
-                <li><Link href="/locations/arlington" className="hover:text-blue-400 transition duration-300">Arlington</Link></li>
-                <li><Link href="/locations/atlantic-beach" className="hover:text-blue-400 transition duration-300">Atlantic Beach</Link></li>
-                <li><Link href="/locations/mandarin" className="hover:text-blue-400 transition duration-300">Mandarin</Link></li>
-                <li><Link href="/locations" className="hover:text-blue-400 transition duration-300">View All Locations</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold mb-4">Company</h3>
-              <ul className="space-y-2">
-                <li><Link href="/about" className="hover:text-blue-400 transition duration-300">About Us</Link></li>
-                <li><Link href="/gallery" className="hover:text-blue-400 transition duration-300">Gallery</Link></li>
-                <li><Link href="/testimonials" className="hover:text-blue-400 transition duration-300">Testimonials</Link></li>
-                <li><Link href="/contact" className="hover:text-blue-400 transition duration-300">Contact</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold mb-4">Contact</h3>
-              <div className="space-y-2">
-                <p className="flex items-center">
-                  <FaPhone className="mr-2" />
-                  (904) 456-3851
-                </p>
-                <p className="flex items-center">
-                  <FaMapMarkerAlt className="mr-2" />
-                  Arlington, Jacksonville, FL
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
     </div>
   )
 }
