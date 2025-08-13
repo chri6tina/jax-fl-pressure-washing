@@ -8,6 +8,7 @@ import Script from 'next/script'
 import PerformanceOptimizer from '@/components/PerformanceOptimizer'
 import TouchOptimizer from '@/components/TouchOptimizer'
 import AccessibilityNavigation from '@/components/AccessibilityNavigation'
+import PerformanceMonitor from '@/components/PerformanceMonitor'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -73,6 +74,24 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Google Analytics */}
+        <Script
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID || 'G-XXXXXXXXXX'}`}
+        />
+        <Script
+          id="gtag-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${process.env.NEXT_PUBLIC_GA_ID || 'G-XXXXXXXXXX'}');
+            `,
+          }}
+        />
+        
         <Script
           id="structured-data"
           type="application/ld+json"
@@ -162,6 +181,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <PerformanceOptimizer />
         <AccessibilityNavigation />
+        <PerformanceMonitor pageName="layout" />
         <TouchOptimizer />
         <div className="min-h-screen flex flex-col">
           <Navbar />
