@@ -184,6 +184,184 @@ export default function RootLayout({
         <PerformanceMonitor pageName="layout" />
         <TouchOptimizer />
         <div className="min-h-screen flex flex-col">
+          {/* Notification Script - This will track page visits and show notifications on ALL pages */}
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                // Simple page visit tracker - runs on every page
+                (function() {
+                  // Track current page visit
+                  function trackPageVisit() {
+                    const visitor = {
+                      id: Math.random().toString(36).substr(2, 9),
+                      timestamp: new Date(),
+                      page: window.location.pathname,
+                      userAgent: navigator.userAgent,
+                      referrer: document.referrer || 'Direct',
+                      location: extractLocationFromPath(window.location.pathname),
+                      service: extractServiceFromPath(window.location.pathname)
+                    };
+
+                    // Save to localStorage for admin dashboard
+                    const existingVisitors = localStorage.getItem('recentVisitors');
+                    let visitors = [];
+                    
+                    if (existingVisitors) {
+                      try {
+                        visitors = JSON.parse(existingVisitors);
+                      } catch (error) {
+                        visitors = [];
+                      }
+                    }
+
+                    // Add new visitor and keep last 50
+                    visitors = [visitor, ...visitors.slice(0, 49)];
+                    localStorage.setItem('recentVisitors', JSON.stringify(visitors));
+
+                    // Check if admin is logged in and notifications are enabled
+                    const isAdmin = localStorage.getItem('adminAuthenticated') === 'true';
+                    const soundEnabled = localStorage.getItem('notificationSound') !== 'false';
+                    const desktopEnabled = localStorage.getItem('notificationDesktop') === 'true';
+                    const soundType = localStorage.getItem('notificationSoundType') || 'ding';
+                    
+                    if (isAdmin && desktopEnabled && 'Notification' in window) {
+                      showVisitorNotification(visitor);
+                    }
+
+                    if (isAdmin && soundEnabled) {
+                      playNotificationSound(soundType);
+                    }
+
+                    // Log to console for debugging
+                    console.log('🚿 New visitor:', {
+                      page: visitor.page,
+                      location: visitor.location,
+                      service: visitor.service,
+                      referrer: visitor.referrer,
+                      time: visitor.timestamp.toLocaleTimeString()
+                    });
+                  }
+
+                  function extractLocationFromPath(path) {
+                    const locationMatch = path.match(/\/([^\/]+)$/);
+                    if (locationMatch) {
+                      const location = locationMatch[1];
+                      const locations = [
+                        'arlington', 'atlantic-beach', 'avondale', 'eastside',
+                        'jacksonville-beach', 'mandarin', 'neptune-beach', 'northside',
+                        'ortega', 'ponte-vedra', 'riverside', 'san-marco',
+                        'southside', 'westside'
+                      ];
+                      if (locations.includes(location)) {
+                        return location.charAt(0).toUpperCase() + location.slice(1);
+                      }
+                    }
+                    return undefined;
+                  }
+
+                  function extractServiceFromPath(path) {
+                    const serviceMatch = path.match(/\/services\/([^\/]+)/);
+                    if (serviceMatch) {
+                      const service = serviceMatch[1];
+                      return service.split('-').map(word => 
+                        word.charAt(0).toUpperCase() + word.slice(1)
+                      ).join(' ');
+                    }
+                    return undefined;
+                  }
+
+                  function showVisitorNotification(visitor) {
+                    if ('Notification' in window && Notification.permission === 'granted') {
+                      const notification = new Notification('🚿 New Visitor Alert!', {
+                        body: \`\${visitor.location ? visitor.location + ' - ' : ''}\${visitor.service ? visitor.service + ' - ' : ''}\${visitor.page}\`,
+                        icon: '/new_logo_v2.png',
+                        badge: '/new_logo_v2.png',
+                        tag: 'visitor-notification',
+                        requireInteraction: false,
+                        silent: false
+                      });
+
+                      // Auto-close after 5 seconds
+                      setTimeout(() => notification.close(), 5000);
+
+                      // Click to focus window
+                      notification.onclick = () => {
+                        window.focus();
+                        notification.close();
+                      };
+                    }
+                  }
+
+                  function playNotificationSound(soundType) {
+                    try {
+                      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                      const oscillator = audioContext.createOscillator();
+                      const gainNode = audioContext.createGain();
+
+                      oscillator.connect(gainNode);
+                      gainNode.connect(audioContext.destination);
+
+                      // Create different sounds based on type
+                      switch (soundType) {
+                        case 'chime':
+                          oscillator.frequency.setValueAtTime(523, audioContext.currentTime);
+                          oscillator.frequency.setValueAtTime(659, audioContext.currentTime + 0.1);
+                          oscillator.frequency.setValueAtTime(784, audioContext.currentTime + 0.2);
+                          break;
+                        case 'bell':
+                          oscillator.frequency.setValueAtTime(1046, audioContext.currentTime);
+                          oscillator.frequency.setValueAtTime(880, audioContext.currentTime + 0.1);
+                          oscillator.frequency.setValueAtTime(659, audioContext.currentTime + 0.2);
+                          break;
+                        default: // ding
+                          oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
+                          oscillator.frequency.setValueAtTime(1000, audioContext.currentTime + 0.1);
+                          oscillator.frequency.setValueAtTime(800, audioContext.currentTime + 0.2);
+                      }
+
+                      gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+                      gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
+
+                      oscillator.start(audioContext.currentTime);
+                      oscillator.stop(audioContext.currentTime + 0.3);
+                    } catch (error) {
+                      console.log('Audio notification not supported');
+                    }
+                  }
+
+                  // Track page visit on load
+                  trackPageVisit();
+
+                  // Track page visits on navigation (for SPA)
+                  const handleRouteChange = () => {
+                    setTimeout(trackPageVisit, 100);
+                  };
+
+                  // Listen for route changes
+                  window.addEventListener('popstate', handleRouteChange);
+                  
+                  // Custom event for Next.js route changes
+                  window.addEventListener('routeChange', handleRouteChange);
+
+                  // Make functions globally available for testing
+                  window.testNotification = function() {
+                    const testVisitor = {
+                      id: 'test',
+                      timestamp: new Date(),
+                      page: '/test-page',
+                      userAgent: 'Test Browser',
+                      referrer: 'Test',
+                      location: 'Mandarin',
+                      service: 'House Washing'
+                    };
+                    
+                    showVisitorNotification(testVisitor);
+                    playNotificationSound('ding');
+                  };
+                })();
+              `
+            }}
+          />
           <Navbar />
           <main className="flex-grow" id="main-content">
             {children}
