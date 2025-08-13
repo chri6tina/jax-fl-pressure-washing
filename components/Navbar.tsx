@@ -30,7 +30,7 @@ const Navbar = () => {
   return (
     <nav className="bg-neutral-white shadow-lg sticky top-0 z-50">
       <div className="container-custom">
-        <div className="flex justify-between items-center py-2">
+        <div className="flex justify-between items-center py-1">
           {/* Logo */}
           <Link href="/" className="flex items-center ml-4">
             <div className="relative w-36 h-36">
