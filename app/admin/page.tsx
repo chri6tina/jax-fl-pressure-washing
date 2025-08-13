@@ -1,5 +1,6 @@
 import LocalSEODashboard from '@/components/LocalSEODashboard'
 import AdminProtected from '@/components/AdminProtected'
+import VisitorNotifier from '@/components/VisitorNotifier'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -196,6 +197,9 @@ export default function AdminDashboard() {
           </div>
         </div>
       </div>
+
+      {/* Visitor Notifier - Fixed position overlay */}
+      <VisitorNotifier />
     </AdminProtected>
   )
 }

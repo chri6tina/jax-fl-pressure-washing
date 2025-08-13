@@ -2,7 +2,7 @@
 export const monitoringConfig = {
   // Google Analytics
   googleAnalytics: {
-    trackingId: 'G-XXXXXXXXXX', // Replace with your GA4 ID
+    trackingId: 'G-4PVR7ECBZ6', // Your actual GA4 ID
     enableDebug: false,
     trackPageViews: true,
     trackEvents: true,

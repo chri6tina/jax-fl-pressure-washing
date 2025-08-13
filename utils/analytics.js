@@ -1,5 +1,5 @@
 // Google Analytics 4 Configuration
-export const GA_TRACKING_ID = 'G-XXXXXXXXXX' // Replace with your actual GA4 ID
+export const GA_TRACKING_ID = 'G-4PVR7ECBZ6' // Your actual GA4 ID
 
 // Page view tracking
 export const pageview = (url) => {
