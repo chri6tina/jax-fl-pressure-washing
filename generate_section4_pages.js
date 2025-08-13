@@ -1,12 +1,32 @@
-'use client'
+const fs = require('fs');
+const path = require('path');
+
+const locations = [
+  'arlington', 'atlantic-beach', 'avondale', 'eastside', 'jacksonville-beach',
+  'mandarin', 'neptune-beach', 'northside', 'ortega', 'ponte-vedra',
+  'riverside', 'san-marco', 'southside', 'westside'
+];
+
+const service = {
+  name: 'roof-cleaning',
+  title: 'Roof Cleaning',
+  cleanName: 'RoofCleaning'
+};
+
+function generatePage(service, location) {
+  const serviceName = service.name;
+  const serviceTitle = service.title;
+  const locationName = location.charAt(0).toUpperCase() + location.slice(1);
+  
+  return `'use client'
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaHome, FaShieldAlt, FaClock, FaStar, FaPhone, FaEnvelope, FaMapMarkerAlt, FaWater, FaLeaf } from 'react-icons/fa';
+import { FaHome, FaShieldAlt, FaClock, FaStar, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const GutterCleaningMandarinPage = () => {
+const RoofCleaning${locationName.charAt(0).toUpperCase() + locationName.slice(1)}Page = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -43,13 +63,13 @@ const GutterCleaningMandarinPage = () => {
             className="text-4xl md:text-6xl font-bold mb-6"
             variants={itemVariants}
           >
-            Professional Gutter Cleaning in Mandarin
+            Professional Roof Cleaning in {locationName}
           </motion.h1>
           <motion.p 
             className="text-xl md:text-2xl mb-8 text-blue-100"
             variants={itemVariants}
           >
-            Expert gutter cleaning services to protect your home from water damage in Mandarin
+            Expert roof cleaning services to protect your home and enhance curb appeal in ${locationName}
           </motion.p>
           <motion.div 
             className="flex flex-col sm:flex-row gap-4 justify-center"
@@ -76,30 +96,29 @@ const GutterCleaningMandarinPage = () => {
         <div className="max-w-6xl mx-auto">
           <motion.div className="text-center mb-16" variants={itemVariants}>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-              Expert Gutter Cleaning Services in Mandarin
+              Expert Roof Cleaning Services in {locationName}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our professional gutter cleaning services in Mandarin remove leaves, debris, and blockages 
-              that can cause water damage to your home. We ensure proper water flow and protect your foundation, 
-              roof, and landscaping from costly water-related issues.
+              Our professional roof cleaning services in ${locationName} remove harmful algae, moss, and debris while protecting your roof's integrity. 
+              We use safe, eco-friendly methods that extend your roof's lifespan and improve your home's appearance.
             </p>
           </motion.div>
 
           <motion.div className="grid md:grid-cols-3 gap-8" variants={itemVariants}>
             <div className="text-center p-6 bg-blue-50 rounded-lg">
-              <FaWater className="text-4xl text-blue-600 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-3">Water Damage Prevention</h3>
-              <p className="text-gray-600">Prevent costly water damage to your foundation, roof, and siding</p>
+              <FaShieldAlt className="text-4xl text-blue-600 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-3">Safe & Effective</h3>
+              <p className="text-gray-600">Gentle cleaning methods that won't damage your roof shingles or tiles</p>
             </div>
             <div className="text-center p-6 bg-cyan-50 rounded-lg">
               <FaClock className="text-4xl text-cyan-600 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-3">Quick & Efficient</h3>
-              <p className="text-gray-600">Professional team completes most gutter cleaning projects in 2-4 hours</p>
+              <h3 className="text-xl font-semibold mb-3">Quick Service</h3>
+              <p className="text-gray-600">Professional team completes most roof cleaning projects in 1-2 days</p>
             </div>
             <div className="text-center p-6 bg-blue-50 rounded-lg">
               <FaStar className="text-4xl text-blue-600 mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-3">Proven Results</h3>
-              <p className="text-gray-600">Thousands of satisfied customers throughout Mandarin and surrounding areas</p>
+              <p className="text-gray-600">Thousands of satisfied customers throughout ${locationName} and surrounding areas</p>
             </div>
           </motion.div>
         </div>
@@ -115,37 +134,37 @@ const GutterCleaningMandarinPage = () => {
       >
         <div className="max-w-6xl mx-auto">
           <motion.h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-16" variants={itemVariants}>
-            Why Choose Jax FL Pressure Washing for Gutter Cleaning in Mandarin
+            Why Choose Jax FL Pressure Washing for Roof Cleaning in {locationName}
           </motion.h2>
           
           <motion.div className="grid md:grid-cols-2 gap-8" variants={itemVariants}>
             <div>
               <h3 className="text-2xl font-semibold mb-4 text-gray-800">Local Expertise</h3>
               <p className="text-gray-600 mb-4">
-                As your trusted Mandarin pressure washing company, we understand the unique challenges 
-                that Florida weather presents to gutters. Our team has extensive experience with all gutter types 
-                and knows how to handle the heavy rainfall and debris common in the Mandarin area.
+                As your trusted ${locationName} pressure washing company, we understand the unique challenges 
+                that Florida weather presents to roofs. Our team has extensive experience with all roof types 
+                common in the ${locationName} area.
               </p>
               <ul className="space-y-2 text-gray-600">
                 <li>• Licensed and insured professionals</li>
-                <li>• Local knowledge of Mandarin building codes</li>
+                <li>• Local knowledge of ${locationName} building codes</li>
                 <li>• Familiar with area-specific weather challenges</li>
                 <li>• Community-focused service approach</li>
               </ul>
             </div>
             
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-800">Advanced Equipment</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800">Advanced Technology</h3>
               <p className="text-gray-600 mb-4">
-                We use state-of-the-art gutter cleaning equipment including high-powered vacuums, 
-                specialized tools, and safety gear to ensure thorough cleaning without damage to your 
-                gutters or home exterior.
+                We use state-of-the-art roof cleaning equipment and eco-friendly cleaning solutions 
+                that are safe for your family, pets, and landscaping while effectively removing 
+                stubborn roof stains and growth.
               </p>
               <ul className="space-y-2 text-gray-600">
-                <li>• Professional gutter vacuum systems</li>
-                <li>• Safety equipment and harnesses</li>
-                <li>• Specialized cleaning tools</li>
-                <li>• Damage-free cleaning methods</li>
+                <li>• Soft wash technology for gentle cleaning</li>
+                <li>• Eco-friendly cleaning solutions</li>
+                <li>• Professional-grade equipment</li>
+                <li>• Safety-first approach</li>
               </ul>
             </div>
           </motion.div>
@@ -162,29 +181,29 @@ const GutterCleaningMandarinPage = () => {
       >
         <div className="max-w-6xl mx-auto">
           <motion.h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-16" variants={itemVariants}>
-            Our Gutter Cleaning Process in Mandarin
+            Our Roof Cleaning Process in {locationName}
           </motion.h2>
           
           <motion.div className="grid md:grid-cols-4 gap-6" variants={itemVariants}>
             <div className="text-center">
               <div className="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">1</div>
               <h3 className="text-xl font-semibold mb-3">Inspection</h3>
-              <p className="text-gray-600">Thorough gutter assessment to identify blockages, damage, and cleaning needs</p>
+              <p className="text-gray-600">Thorough roof assessment to identify problem areas and determine the best cleaning approach</p>
             </div>
             <div className="text-center">
               <div className="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">2</div>
-              <h3 className="text-xl font-semibold mb-3">Safety Setup</h3>
-              <p className="text-gray-600">Proper safety equipment and ladder stabilization for secure access</p>
+              <h3 className="text-xl font-semibold mb-3">Preparation</h3>
+              <p className="text-gray-600">Protect landscaping and surrounding areas before beginning the cleaning process</p>
             </div>
             <div className="text-center">
               <div className="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">3</div>
-              <h3 className="text-xl font-semibold mb-3">Deep Cleaning</h3>
-              <p className="text-gray-600">Remove all leaves, debris, and blockages using professional equipment</p>
+              <h3 className="text-xl font-semibold mb-3">Cleaning</h3>
+              <p className="text-gray-600">Apply eco-friendly cleaning solution and gently remove algae, moss, and debris</p>
             </div>
             <div className="text-center">
               <div className="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">4</div>
-              <h3 className="text-xl font-semibold mb-3">Water Test</h3>
-              <p className="text-gray-600">Test water flow to ensure gutters are functioning properly</p>
+              <h3 className="text-xl font-semibold mb-3">Final Inspection</h3>
+              <p className="text-gray-600">Quality check to ensure your roof is clean and protected for years to come</p>
             </div>
           </motion.div>
         </div>
@@ -200,37 +219,37 @@ const GutterCleaningMandarinPage = () => {
       >
         <div className="max-w-6xl mx-auto">
           <motion.h2 className="text-3xl md:text-4xl font-bold text-center mb-16" variants={itemVariants}>
-            Why Mandarin Homeowners Choose Professional Gutter Cleaning
+            Why {locationName} Homeowners Choose Professional Roof Cleaning
           </motion.h2>
           
           <motion.div className="grid md:grid-cols-2 gap-8" variants={itemVariants}>
             <div>
               <h3 className="text-2xl font-semibold mb-4">Florida Weather Challenges</h3>
               <p className="text-blue-100 mb-4">
-                Mandarin experiences heavy rainfall, high humidity, and frequent storms that can 
-                quickly clog gutters with leaves, pine needles, and debris. Professional cleaning prevents 
-                water damage and maintains proper drainage.
+                ${locationName} experiences high humidity, frequent rain, and intense sun exposure that can 
+                accelerate roof deterioration. Professional cleaning removes harmful growth and extends 
+                your roof's lifespan.
               </p>
               <ul className="space-y-2 text-blue-100">
-                <li>• Prevents foundation water damage</li>
-                <li>• Protects roof and siding</li>
-                <li>• Maintains proper drainage</li>
-                <li>• Reduces mosquito breeding</li>
+                <li>• Prevents algae and moss growth</li>
+                <li>• Protects against UV damage</li>
+                <li>• Maintains roof warranty</li>
+                <li>• Improves energy efficiency</li>
               </ul>
             </div>
             
             <div>
-              <h3 className="text-2xl font-semibold mb-4">Property Protection</h3>
+              <h3 className="text-2xl font-semibold mb-4">Property Value Protection</h3>
               <p className="text-blue-100 mb-4">
-                Clogged gutters can cause water to overflow and damage your home's foundation, 
-                landscaping, and exterior. In Mandarin's climate, regular gutter maintenance 
-                is essential for protecting your investment.
+                A clean, well-maintained roof significantly enhances your home's curb appeal and 
+                market value. In ${locationName}'s competitive real estate market, this attention 
+                to detail can make a real difference.
               </p>
               <ul className="space-y-2 text-blue-100">
-                <li>• Foundation protection</li>
-                <li>• Landscape preservation</li>
-                <li>• Exterior damage prevention</li>
-                <li>• Long-term home value</li>
+                <li>• Enhanced curb appeal</li>
+                <li>• Higher property value</li>
+                <li>• Faster home sales</li>
+                <li>• Professional appearance</li>
               </ul>
             </div>
           </motion.div>
@@ -247,10 +266,10 @@ const GutterCleaningMandarinPage = () => {
       >
         <div className="max-w-4xl mx-auto text-center">
           <motion.h2 className="text-3xl md:text-4xl font-bold mb-6" variants={itemVariants}>
-            Ready for Cleaner Gutters in Mandarin?
+            Ready for a Cleaner Roof in {locationName}?
           </motion.h2>
           <motion.p className="text-xl mb-8 text-gray-300" variants={itemVariants}>
-            Join hundreds of satisfied Mandarin homeowners who trust us with their gutter cleaning needs. 
+            Join hundreds of satisfied ${locationName} homeowners who trust us with their roof cleaning needs. 
             Get your free quote today!
           </motion.p>
           <motion.div className="flex flex-col sm:flex-row gap-4 justify-center" variants={itemVariants}>
@@ -271,8 +290,8 @@ const GutterCleaningMandarinPage = () => {
             <div>
               <h3 className="text-xl font-semibold mb-4">Jax FL Pressure Washing</h3>
               <p className="text-gray-400 mb-4">
-                Your trusted Mandarin pressure washing company, providing professional 
-                gutter cleaning services throughout Jacksonville and surrounding areas.
+                Your trusted ${locationName} pressure washing company, providing professional 
+                roof cleaning services throughout Jacksonville and surrounding areas.
               </p>
               <div className="flex space-x-4">
                 <FaPhone className="text-blue-400" />
@@ -283,7 +302,7 @@ const GutterCleaningMandarinPage = () => {
             <div>
               <h3 className="text-xl font-semibold mb-4">Service Areas</h3>
               <p className="text-gray-400 mb-4">
-                Serving Mandarin and all of Jacksonville, Florida including:
+                Serving ${locationName} and all of Jacksonville, Florida including:
               </p>
               <div className="grid grid-cols-2 gap-2 text-sm text-gray-400">
                 <span>• Arlington</span>
@@ -331,4 +350,26 @@ const GutterCleaningMandarinPage = () => {
   );
 };
 
-export default GutterCleaningMandarinPage;
+export default RoofCleaning${locationName.charAt(0).toUpperCase() + locationName.slice(1)}Page;`;
+}
+
+// Generate pages for each location
+locations.forEach(location => {
+  const dirPath = path.join(__dirname, 'app', 'services', service.name, location);
+  
+  // Create directory if it doesn't exist
+  if (!fs.existsSync(dirPath)) {
+    fs.mkdirSync(dirPath, { recursive: true });
+  }
+  
+  const filePath = path.join(dirPath, 'page.tsx');
+  const content = generatePage(service, location);
+  
+  fs.writeFileSync(filePath, content);
+  console.log(`✅ Generated: ${service.name}/${location}/page.tsx`);
+});
+
+console.log(`\\n🎉 Section 4 Complete! Generated ${locations.length} Roof Cleaning location pages!`);
+console.log(`📊 Total pages created: ${locations.length}`);
+console.log(`🌍 Locations covered: ${locations.join(', ')}`);
+console.log(`🚀 Ready for local SEO domination in Jacksonville!`);
