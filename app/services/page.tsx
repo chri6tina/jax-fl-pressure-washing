@@ -576,7 +576,7 @@ const ServicesPage = () => {
               </a>
             </div>
           </motion.div>
-        </div>
+      </div>
       </section>
     </div>
   )
