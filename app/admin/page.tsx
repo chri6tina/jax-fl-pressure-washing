@@ -2,7 +2,6 @@
 
 import LocalSEODashboard from '@/components/LocalSEODashboard'
 import AdminProtected from '@/components/AdminProtected'
-import VisitorNotifier from '@/components/VisitorNotifier'
 import { useEffect, useState } from 'react'
 
 // Performance API type definitions
@@ -284,9 +283,12 @@ export default function AdminDashboard() {
                   <button className="w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors">
                     📧 Check Contact Forms
                   </button>
-                  <button className="w-full bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-700 transition-colors">
-                    🔍 SEO Health Check
-                  </button>
+                  <a
+                    href="/admin/settings"
+                    className="w-full bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-700 transition-colors text-center block"
+                  >
+                    ⚙️ Notification Settings
+                  </a>
                   <button className="w-full bg-orange-600 text-white py-2 px-4 rounded-lg hover:bg-orange-700 transition-colors">
                     📱 Performance Report
                   </button>
@@ -322,9 +324,6 @@ export default function AdminDashboard() {
           </div>
         </div>
       </div>
-
-      {/* Visitor Notifier - Fixed position overlay */}
-      <VisitorNotifier />
     </AdminProtected>
   )
 }
