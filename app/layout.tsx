@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Script from 'next/script'
 import PerformanceOptimizer from '@/components/PerformanceOptimizer'
+import TouchOptimizer from '@/components/TouchOptimizer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -149,6 +150,7 @@ export default function RootLayout({
   </head>
       <body className={inter.className}>
         <PerformanceOptimizer />
+        <TouchOptimizer />
         <div className="min-h-screen flex flex-col">
           <Navbar />
           <main className="flex-grow">
