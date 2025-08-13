@@ -237,7 +237,8 @@ const RoofCleaningAvondalePage = () => {
         </div>
       </motion.section>
 
-      {/* CTA Section */}
+      
+    {/* CTA Section */}
       <motion.section 
         className="py-16 px-4 bg-gray-800 text-white"
         initial="hidden"
@@ -283,7 +284,7 @@ const RoofCleaningAvondalePage = () => {
             <div>
               <h3 className="text-xl font-semibold mb-4">Service Areas</h3>
               <p className="text-gray-400 mb-4">
-                Serving Avondale and all of Jacksonville, Florida including:
+                Serving Avondale and all of Jacksonville, Florida including: We also offer <Link href="/services/house-washing/avondale" className="text-blue-400 hover:text-white">house washing</Link>, <Link href="/services/driveway-cleaning/avondale" className="text-blue-400 hover:text-white">driveway cleaning</Link>, <Link href="/services/roof-cleaning/avondale" className="text-blue-400 hover:text-white">roof cleaning</Link>, and <Link href="/services/gutter-cleaning/avondale" className="text-blue-400 hover:text-white">gutter cleaning</Link> services in Avondale.
               </p>
               <div className="grid grid-cols-2 gap-2 text-sm text-gray-400">
                 <span>• Arlington</span>
