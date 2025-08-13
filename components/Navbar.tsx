@@ -32,8 +32,8 @@ const Navbar = () => {
       <div className="container-custom">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3">
-            <div className="relative w-12 h-12">
+          <Link href="/" className="flex items-center">
+            <div className="relative w-16 h-16">
               <Image
                 src="/JFPW_logo.png"
                 alt="Jax FL Pressure Washing Logo"
@@ -41,9 +41,6 @@ const Navbar = () => {
                 className="object-contain"
                 priority
               />
-            </div>
-            <div className="hidden sm:block">
-              <h1 className="text-xl font-bold text-primary">Jax FL Pressure Washing</h1>
             </div>
           </Link>
 
