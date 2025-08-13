@@ -33,9 +33,9 @@ const Navbar = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <div className="relative w-32 h-32">
+            <div className="relative w-20 h-20">
               <Image
-                src="/new_logo.png"
+                src="/new_logo_v2.png"
                 alt="Jax FL Pressure Washing Logo"
                 fill
                 className="object-contain"

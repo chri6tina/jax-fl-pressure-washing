@@ -33,9 +33,9 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="relative w-28 h-28">
+              <div className="relative w-24 h-24">
                 <Image
-                  src="/new_logo.png"
+                  src="/new_logo_v2.png"
                   alt="Jax FL Pressure Washing Logo"
                   fill
                   className="object-contain"
