@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { FaBars, FaTimes } from 'react-icons/fa'
+import Image from 'next/image'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -31,9 +32,15 @@ const Navbar = () => {
       <div className="container-custom">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
-              <span className="text-neutral-white font-bold text-xl">J</span>
+          <Link href="/" className="flex items-center space-x-3">
+            <div className="relative w-12 h-12">
+              <Image
+                src="/JFPW_logo.png"
+                alt="Jax FL Pressure Washing Logo"
+                fill
+                className="object-contain"
+                priority
+              />
             </div>
             <div className="hidden sm:block">
               <h1 className="text-xl font-bold text-primary">Jax FL Pressure Washing</h1>

@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { FaFacebook, FaInstagram, FaTiktok, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
 
 const Footer = () => {
@@ -31,9 +32,15 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-secondary to-accent-eco rounded-lg flex items-center justify-center">
-                <span className="text-neutral-white font-bold text-xl">J</span>
+            <div className="flex items-center space-x-3 mb-4">
+              <div className="relative w-12 h-12">
+                <Image
+                  src="/JFPW_logo.png"
+                  alt="Jax FL Pressure Washing Logo"
+                  fill
+                  className="object-contain"
+                  priority
+                />
               </div>
               <h3 className="text-xl font-bold">Jax FL Pressure Washing</h3>
             </div>
