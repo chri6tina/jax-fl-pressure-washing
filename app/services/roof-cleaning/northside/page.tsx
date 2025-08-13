@@ -1,32 +1,12 @@
-const fs = require('fs');
-const path = require('path');
-
-const locations = [
-  'arlington', 'atlantic-beach', 'avondale', 'eastside', 'jacksonville-beach',
-  'mandarin', 'neptune-beach', 'northside', 'ortega', 'ponte-vedra',
-  'riverside', 'san-marco', 'southside', 'westside'
-];
-
-const service = {
-  name: 'roof-cleaning',
-  title: 'Roof Cleaning',
-  cleanName: 'RoofCleaning'
-};
-
-function generatePage(service, location) {
-  const serviceName = service.name;
-  const serviceTitle = service.title;
-  const locationName = location.charAt(0).toUpperCase() + location.slice(1);
-  
-  return `'use client'
+'use client'
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaHome, FaShieldAlt, FaClock, FaStar, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaHome, FaShieldAlt, FaClock, FaStar, FaPhone, FaEnvelope, FaMapMarkerAlt, FaWater, FaLeaf, FaTools } from 'react-icons/fa';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const RoofCleaning${locationName.charAt(0).toUpperCase() + locationName.slice(1)}Page = () => {
+const RoofCleaningNorthsidePage = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -63,13 +43,13 @@ const RoofCleaning${locationName.charAt(0).toUpperCase() + locationName.slice(1)
             className="text-4xl md:text-6xl font-bold mb-6"
             variants={itemVariants}
           >
-            Professional Roof Cleaning in {locationName}
+            Professional Roof Cleaning in Northside
           </motion.h1>
           <motion.p 
             className="text-xl md:text-2xl mb-8 text-blue-100"
             variants={itemVariants}
           >
-            Expert roof cleaning services to protect your home and enhance curb appeal in ${locationName}
+            Expert roof cleaning services to protect your home and enhance curb appeal in Northside
           </motion.p>
           <motion.div 
             className="flex flex-col sm:flex-row gap-4 justify-center"
@@ -96,29 +76,30 @@ const RoofCleaning${locationName.charAt(0).toUpperCase() + locationName.slice(1)
         <div className="max-w-6xl mx-auto">
           <motion.div className="text-center mb-16" variants={itemVariants}>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-              Expert Roof Cleaning Services in {locationName}
+              Expert Roof Cleaning Services in Northside
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our professional roof cleaning services in ${locationName} remove harmful algae, moss, and debris while protecting your roof's integrity. 
-              We use safe, eco-friendly methods that extend your roof's lifespan and improve your home's appearance.
+              Our professional roof cleaning services in Northside safely remove algae, moss, and debris 
+              that can damage your roof and reduce its lifespan. We use eco-friendly methods to restore your 
+              roof's appearance and protect your investment.
             </p>
           </motion.div>
 
           <motion.div className="grid md:grid-cols-3 gap-8" variants={itemVariants}>
             <div className="text-center p-6 bg-blue-50 rounded-lg">
               <FaShieldAlt className="text-4xl text-blue-600 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-3">Safe & Effective</h3>
-              <p className="text-gray-600">Gentle cleaning methods that won't damage your roof shingles or tiles</p>
+              <h3 className="text-xl font-semibold mb-3">Roof Protection</h3>
+              <p className="text-gray-600">Prevent costly damage and extend your roof's lifespan</p>
             </div>
             <div className="text-center p-6 bg-cyan-50 rounded-lg">
-              <FaClock className="text-4xl text-cyan-600 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-3">Quick Service</h3>
-              <p className="text-gray-600">Professional team completes most roof cleaning projects in 1-2 days</p>
+              <FaTools className="text-4xl text-cyan-600 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-3">Safe & Effective</h3>
+              <p className="text-gray-600">Professional equipment and eco-friendly cleaning solutions</p>
             </div>
             <div className="text-center p-6 bg-blue-50 rounded-lg">
               <FaStar className="text-4xl text-blue-600 mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-3">Proven Results</h3>
-              <p className="text-gray-600">Thousands of satisfied customers throughout ${locationName} and surrounding areas</p>
+              <p className="text-gray-600">Thousands of satisfied customers throughout Northside</p>
             </div>
           </motion.div>
         </div>
@@ -134,37 +115,37 @@ const RoofCleaning${locationName.charAt(0).toUpperCase() + locationName.slice(1)
       >
         <div className="max-w-6xl mx-auto">
           <motion.h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-16" variants={itemVariants}>
-            Why Choose Jax FL Pressure Washing for Roof Cleaning in {locationName}
+            Why Choose Jax FL Pressure Washing for Roof Cleaning in Northside
           </motion.h2>
           
           <motion.div className="grid md:grid-cols-2 gap-8" variants={itemVariants}>
             <div>
               <h3 className="text-2xl font-semibold mb-4 text-gray-800">Local Expertise</h3>
               <p className="text-gray-600 mb-4">
-                As your trusted ${locationName} pressure washing company, we understand the unique challenges 
+                As your trusted Northside pressure washing company, we understand the unique challenges 
                 that Florida weather presents to roofs. Our team has extensive experience with all roof types 
-                common in the ${locationName} area.
+                and knows how to handle the humidity, heat, and storms common in the Northside area.
               </p>
               <ul className="space-y-2 text-gray-600">
                 <li>• Licensed and insured professionals</li>
-                <li>• Local knowledge of ${locationName} building codes</li>
+                <li>• Local knowledge of Northside building codes</li>
                 <li>• Familiar with area-specific weather challenges</li>
                 <li>• Community-focused service approach</li>
               </ul>
             </div>
             
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-800">Advanced Technology</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800">Advanced Equipment</h3>
               <p className="text-gray-600 mb-4">
-                We use state-of-the-art roof cleaning equipment and eco-friendly cleaning solutions 
-                that are safe for your family, pets, and landscaping while effectively removing 
-                stubborn roof stains and growth.
+                We use state-of-the-art roof cleaning equipment including specialized pumps, 
+                safety gear, and eco-friendly cleaning solutions to ensure thorough cleaning 
+                without damage to your roof or home exterior.
               </p>
               <ul className="space-y-2 text-gray-600">
-                <li>• Soft wash technology for gentle cleaning</li>
+                <li>• Professional roof cleaning systems</li>
+                <li>• Safety equipment and harnesses</li>
                 <li>• Eco-friendly cleaning solutions</li>
-                <li>• Professional-grade equipment</li>
-                <li>• Safety-first approach</li>
+                <li>• Damage-free cleaning methods</li>
               </ul>
             </div>
           </motion.div>
@@ -181,29 +162,29 @@ const RoofCleaning${locationName.charAt(0).toUpperCase() + locationName.slice(1)
       >
         <div className="max-w-6xl mx-auto">
           <motion.h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-16" variants={itemVariants}>
-            Our Roof Cleaning Process in {locationName}
+            Our Roof Cleaning Process in Northside
           </motion.h2>
           
           <motion.div className="grid md:grid-cols-4 gap-6" variants={itemVariants}>
             <div className="text-center">
               <div className="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">1</div>
               <h3 className="text-xl font-semibold mb-3">Inspection</h3>
-              <p className="text-gray-600">Thorough roof assessment to identify problem areas and determine the best cleaning approach</p>
+              <p className="text-gray-600">Thorough roof assessment to identify algae, moss, and cleaning needs</p>
             </div>
             <div className="text-center">
               <div className="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">2</div>
-              <h3 className="text-xl font-semibold mb-3">Preparation</h3>
-              <p className="text-gray-600">Protect landscaping and surrounding areas before beginning the cleaning process</p>
+              <h3 className="text-xl font-semibold mb-3">Safety Setup</h3>
+              <p className="text-gray-600">Proper safety equipment and roof access setup for secure cleaning</p>
             </div>
             <div className="text-center">
               <div className="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">3</div>
-              <h3 className="text-xl font-semibold mb-3">Cleaning</h3>
-              <p className="text-gray-600">Apply eco-friendly cleaning solution and gently remove algae, moss, and debris</p>
+              <h3 className="text-xl font-semibold mb-3">Gentle Cleaning</h3>
+              <p className="text-gray-600">Remove algae and moss using low-pressure, eco-friendly methods</p>
             </div>
             <div className="text-center">
               <div className="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">4</div>
-              <h3 className="text-xl font-semibold mb-3">Final Inspection</h3>
-              <p className="text-gray-600">Quality check to ensure your roof is clean and protected for years to come</p>
+              <h3 className="text-xl font-semibold mb-3">Protection</h3>
+              <p className="text-gray-600">Apply protective treatment to prevent future growth</p>
             </div>
           </motion.div>
         </div>
@@ -219,37 +200,37 @@ const RoofCleaning${locationName.charAt(0).toUpperCase() + locationName.slice(1)
       >
         <div className="max-w-6xl mx-auto">
           <motion.h2 className="text-3xl md:text-4xl font-bold text-center mb-16" variants={itemVariants}>
-            Why {locationName} Homeowners Choose Professional Roof Cleaning
+            Why Northside Homeowners Choose Professional Roof Cleaning
           </motion.h2>
           
           <motion.div className="grid md:grid-cols-2 gap-8" variants={itemVariants}>
             <div>
               <h3 className="text-2xl font-semibold mb-4">Florida Weather Challenges</h3>
               <p className="text-blue-100 mb-4">
-                ${locationName} experiences high humidity, frequent rain, and intense sun exposure that can 
-                accelerate roof deterioration. Professional cleaning removes harmful growth and extends 
-                your roof's lifespan.
+                Northside experiences high humidity, frequent rain, and intense sun that create 
+                perfect conditions for algae and moss growth on roofs. Professional cleaning prevents 
+                damage and maintains your roof's integrity.
               </p>
               <ul className="space-y-2 text-blue-100">
-                <li>• Prevents algae and moss growth</li>
-                <li>• Protects against UV damage</li>
-                <li>• Maintains roof warranty</li>
-                <li>• Improves energy efficiency</li>
+                <li>• Prevents roof deterioration</li>
+                <li>• Maintains energy efficiency</li>
+                <li>• Protects against leaks</li>
+                <li>• Enhances curb appeal</li>
               </ul>
             </div>
             
             <div>
-              <h3 className="text-2xl font-semibold mb-4">Property Value Protection</h3>
+              <h3 className="text-2xl font-semibold mb-4">Property Protection</h3>
               <p className="text-blue-100 mb-4">
-                A clean, well-maintained roof significantly enhances your home's curb appeal and 
-                market value. In ${locationName}'s competitive real estate market, this attention 
-                to detail can make a real difference.
+                Algae and moss can cause serious damage to your roof shingles, leading to leaks, 
+                structural issues, and costly repairs. In Northside's climate, regular roof 
+                maintenance is essential for protecting your investment.
               </p>
               <ul className="space-y-2 text-blue-100">
-                <li>• Enhanced curb appeal</li>
-                <li>• Higher property value</li>
-                <li>• Faster home sales</li>
-                <li>• Professional appearance</li>
+                <li>• Extends roof lifespan</li>
+                <li>• Prevents water damage</li>
+                <li>• Maintains home value</li>
+                <li>• Reduces repair costs</li>
               </ul>
             </div>
           </motion.div>
@@ -266,10 +247,10 @@ const RoofCleaning${locationName.charAt(0).toUpperCase() + locationName.slice(1)
       >
         <div className="max-w-4xl mx-auto text-center">
           <motion.h2 className="text-3xl md:text-4xl font-bold mb-6" variants={itemVariants}>
-            Ready for a Cleaner Roof in {locationName}?
+            Ready for a Cleaner Roof in Northside?
           </motion.h2>
           <motion.p className="text-xl mb-8 text-gray-300" variants={itemVariants}>
-            Join hundreds of satisfied ${locationName} homeowners who trust us with their roof cleaning needs. 
+            Join hundreds of satisfied Northside homeowners who trust us with their roof cleaning needs. 
             Get your free quote today!
           </motion.p>
           <motion.div className="flex flex-col sm:flex-row gap-4 justify-center" variants={itemVariants}>
@@ -290,7 +271,7 @@ const RoofCleaning${locationName.charAt(0).toUpperCase() + locationName.slice(1)
             <div>
               <h3 className="text-xl font-semibold mb-4">Jax FL Pressure Washing</h3>
               <p className="text-gray-400 mb-4">
-                Your trusted ${locationName} pressure washing company, providing professional 
+                Your trusted Northside pressure washing company, providing professional 
                 roof cleaning services throughout Jacksonville and surrounding areas.
               </p>
               <div className="flex space-x-4">
@@ -302,7 +283,7 @@ const RoofCleaning${locationName.charAt(0).toUpperCase() + locationName.slice(1)
             <div>
               <h3 className="text-xl font-semibold mb-4">Service Areas</h3>
               <p className="text-gray-400 mb-4">
-                Serving ${locationName} and all of Jacksonville, Florida including:
+                Serving Northside and all of Jacksonville, Florida including:
               </p>
               <div className="grid grid-cols-2 gap-2 text-sm text-gray-400">
                 <span>• Arlington</span>
@@ -350,26 +331,4 @@ const RoofCleaning${locationName.charAt(0).toUpperCase() + locationName.slice(1)
   );
 };
 
-export default RoofCleaning${locationName.charAt(0).toUpperCase() + locationName.slice(1)}Page;`;
-}
-
-// Generate pages for each location
-locations.forEach(location => {
-  const dirPath = path.join(__dirname, 'app', 'services', service.name, location);
-  
-  // Create directory if it doesn't exist
-  if (!fs.existsSync(dirPath)) {
-    fs.mkdirSync(dirPath, { recursive: true });
-  }
-  
-  const filePath = path.join(dirPath, 'page.tsx');
-  const content = generatePage(service, location);
-  
-  fs.writeFileSync(filePath, content);
-  console.log(`✅ Generated: ${service.name}/${location}/page.tsx`);
-});
-
-console.log(`\\n🎉 Section 4 Complete! Generated ${locations.length} Roof Cleaning location pages!`);
-console.log(`📊 Total pages created: ${locations.length}`);
-console.log(`🌍 Locations covered: ${locations.join(', ')}`);
-console.log(`🚀 Ready for local SEO domination in Jacksonville!`);
+export default RoofCleaningNorthsidePage;
