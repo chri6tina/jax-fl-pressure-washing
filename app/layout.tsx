@@ -6,9 +6,9 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Script from 'next/script'
 import PerformanceOptimizer from '@/components/PerformanceOptimizer'
+import PerformanceMonitor from '@/components/PerformanceMonitor'
 import TouchOptimizer from '@/components/TouchOptimizer'
 import AccessibilityNavigation from '@/components/AccessibilityNavigation'
-import PerformanceMonitor from '@/components/PerformanceMonitor'
 
 const inter = Inter({ subsets: ['latin'] })
 
