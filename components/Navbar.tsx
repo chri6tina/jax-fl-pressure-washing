@@ -32,8 +32,8 @@ const Navbar = () => {
       <div className="container-custom">
         <div className="flex justify-between items-center py-2">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <div className="relative w-28 h-28">
+          <Link href="/" className="flex items-center ml-4">
+            <div className="relative w-36 h-36">
               <Image
                 src="/new_logo_v2.png"
                 alt="Jax FL Pressure Washing Logo"
