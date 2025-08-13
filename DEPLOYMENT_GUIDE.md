@@ -42,7 +42,7 @@ git status  # Should show clean working directory
 ### **Step 3: Connect Local Repository to GitHub**
 ```bash
 # Add the remote origin (replace YOUR_USERNAME with your GitHub username)
-git remote add origin https://github.com/YOUR_USERNAME/jax-fl-pressure-washing.git
+git remote add origin https://github.com/chri6tina/jax-fl-pressure-washing.git
 
 # Push to GitHub
 git branch -M main
