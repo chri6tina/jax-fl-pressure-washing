@@ -218,18 +218,47 @@ export default function RootLayout({
                     visitors = [visitor, ...visitors.slice(0, 49)];
                     localStorage.setItem('recentVisitors', JSON.stringify(visitors));
 
+                    // ALWAYS save visitor data for admin dashboard
                     // Check if admin is logged in and notifications are enabled
                     const isAdmin = localStorage.getItem('adminAuthenticated') === 'true';
                     const soundEnabled = localStorage.getItem('notificationSound') !== 'false';
                     const desktopEnabled = localStorage.getItem('notificationDesktop') === 'true';
                     const soundType = localStorage.getItem('notificationSoundType') || 'ding';
                     
+                    // Show notifications if admin is logged in on this device
                     if (isAdmin && desktopEnabled && 'Notification' in window) {
                       showVisitorNotification(visitor);
                     }
 
                     if (isAdmin && soundEnabled) {
                       playNotificationSound(soundType);
+                    }
+
+                    // ALWAYS send a global notification event that other devices can listen to
+                    // This ensures notifications work even when you're not logged in on the visitor's device
+                    if ('Notification' in window && Notification.permission === 'granted') {
+                      // Create a custom event that can be caught by other admin sessions
+                      const notificationEvent = new CustomEvent('newVisitor', {
+                        detail: {
+                          visitor: visitor,
+                          timestamp: new Date().toISOString(),
+                          shouldNotify: true
+                        }
+                      });
+                      window.dispatchEvent(notificationEvent);
+                      
+                      // Also try to send a notification to any open admin tabs
+                      if (window.opener && window.opener.postMessage) {
+                        try {
+                          window.opener.postMessage({
+                            type: 'newVisitor',
+                            visitor: visitor,
+                            timestamp: new Date().toISOString()
+                          }, '*');
+                        } catch (e) {
+                          // Cross-origin restrictions might prevent this
+                        }
+                      }
                     }
 
                     // Log to console for debugging

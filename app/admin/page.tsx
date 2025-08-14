@@ -31,7 +31,12 @@ export default function AdminDashboard() {
     cls: 'Loading...'
   })
 
-  const [recentActivity, setRecentActivity] = useState([])
+  const [recentActivity, setRecentActivity] = useState<Array<{
+    type: string
+    message: string
+    timestamp: Date
+    details: any
+  }>>([])
 
   useEffect(() => {
     // Calculate real stats based on actual data
@@ -42,15 +47,143 @@ export default function AdminDashboard() {
       const totalServices = 21 // Core services
       const totalServiceLocations = 70 // Service + location combinations
       
+      // Load visitor data from localStorage to get real counts
+      let recentVisitors = 0;
+      let todayVisitors = 0;
+      
+      try {
+        const savedVisitors = localStorage.getItem('recentVisitors');
+        if (savedVisitors) {
+          const visitors = JSON.parse(savedVisitors);
+          recentVisitors = visitors.length;
+          
+          // Count today's visitors
+          const today = new Date().toDateString();
+          todayVisitors = visitors.filter((v: any) => 
+            new Date(v.timestamp).toDateString() === today
+          ).length;
+        }
+      } catch (error) {
+        console.log('Could not load visitor data');
+      }
+      
       setStats({
         totalPages,
         totalAreas,
         totalServices,
         totalServiceLocations,
-        recentVisitors: 0, // Will be updated by VisitorNotifier
-        todayVisitors: 0 // Will be updated by VisitorNotifier
+        recentVisitors,
+        todayVisitors
       })
     }
+
+    // Set up global visitor notification listener
+    const handleNewVisitor = (event: CustomEvent) => {
+      const { visitor, timestamp, shouldNotify } = event.detail;
+      
+      if (shouldNotify) {
+        // Show desktop notification
+        if ('Notification' in window && Notification.permission === 'granted') {
+          const notification = new Notification('🚿 New Visitor Alert!', {
+            body: `${visitor.location ? visitor.location + ' - ' : ''}${visitor.service ? visitor.service + ' - ' : ''}${visitor.page}`,
+            icon: '/new_logo_v2.png',
+            badge: '/new_logo_v2.png',
+            tag: 'visitor-notification',
+            requireInteraction: false,
+            silent: false
+          });
+
+          // Auto-close after 5 seconds
+          setTimeout(() => notification.close(), 5000);
+
+          // Click to focus window
+          notification.onclick = () => {
+            window.focus();
+            notification.close();
+          };
+        }
+
+        // Play notification sound
+        const soundEnabled = localStorage.getItem('notificationSound') !== 'false';
+        const soundType = localStorage.getItem('notificationSoundType') || 'ding';
+        
+        if (soundEnabled) {
+          try {
+            const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+
+            // Create different sounds based on type
+            switch (soundType) {
+              case 'chime':
+                oscillator.frequency.setValueAtTime(523, audioContext.currentTime);
+                oscillator.frequency.setValueAtTime(659, audioContext.currentTime + 0.1);
+                oscillator.frequency.setValueAtTime(784, audioContext.currentTime + 0.2);
+                break;
+              case 'bell':
+                oscillator.frequency.setValueAtTime(1046, audioContext.currentTime);
+                oscillator.frequency.setValueAtTime(880, audioContext.currentTime + 0.1);
+                oscillator.frequency.setValueAtTime(659, audioContext.currentTime + 0.2);
+                break;
+              default: // ding
+                oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
+                oscillator.frequency.setValueAtTime(1000, audioContext.currentTime + 0.1);
+                oscillator.frequency.setValueAtTime(800, audioContext.currentTime + 0.2);
+            }
+
+            gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
+
+            oscillator.start(audioContext.currentTime);
+            oscillator.stop(audioContext.currentTime + 0.3);
+          } catch (error) {
+            console.log('Audio notification not supported');
+          }
+        }
+
+        // Update stats
+        setStats(prev => ({
+          ...prev,
+          recentVisitors: prev.recentVisitors + 1,
+          todayVisitors: prev.todayVisitors + 1
+        }));
+
+        // Add to recent activity
+        setRecentActivity(prev => [{
+          type: 'visitor',
+          message: `New visitor to ${visitor.page}`,
+          timestamp: new Date(timestamp),
+          details: visitor
+        }, ...prev.slice(0, 9)]);
+      }
+    };
+
+    // Listen for new visitor events
+    window.addEventListener('newVisitor', handleNewVisitor as EventListener);
+
+    // Also listen for postMessage from other tabs/windows
+    const handlePostMessage = (event: MessageEvent) => {
+      if (event.data && event.data.type === 'newVisitor') {
+        const { visitor, timestamp } = event.data;
+        
+        // Trigger the same notification logic
+        const customEvent = new CustomEvent('newVisitor', {
+          detail: { visitor, timestamp, shouldNotify: true }
+        });
+        window.dispatchEvent(customEvent);
+      }
+    };
+
+    window.addEventListener('message', handlePostMessage);
+
+    // Cleanup function
+    return () => {
+      window.removeEventListener('newVisitor', handleNewVisitor as EventListener);
+      window.removeEventListener('message', handlePostMessage);
+    };
 
     // Get real performance metrics
     const getPerformanceMetrics = () => {
@@ -158,7 +291,7 @@ export default function AdminDashboard() {
           </div>
 
           {/* Quick Stats Cards */}
-          <div className="grid md:grid-cols-4 gap-6 mb-8">
+          <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-6 mb-8">
             <div className="bg-white rounded-xl shadow-lg p-6">
               <div className="flex items-center">
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
@@ -203,6 +336,31 @@ export default function AdminDashboard() {
                 <div className="ml-4">
                   <div className="text-2xl font-bold text-gray-800">{stats.totalServiceLocations}</div>
                   <div className="text-gray-600">Service+Location</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Visitor Stats */}
+            <div className="bg-white rounded-xl shadow-lg p-6">
+              <div className="flex items-center">
+                <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
+                  <span className="text-2xl">👥</span>
+                </div>
+                <div className="ml-4">
+                  <div className="text-2xl font-bold text-gray-800">{stats.recentVisitors}</div>
+                  <div className="text-gray-600">Recent Visitors</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg p-6">
+              <div className="flex items-center">
+                <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
+                  <span className="text-2xl">📅</span>
+                </div>
+                <div className="ml-4">
+                  <div className="text-2xl font-bold text-gray-800">{stats.todayVisitors}</div>
+                  <div className="text-gray-600">Today's Visitors</div>
                 </div>
               </div>
             </div>
